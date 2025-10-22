@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Calculadora de Pensão Alimentícia Online</title>
+</head>
+<body>
+  <h1>Calculadora de Pensão Alimentícia</h1>
+  <label>Salário do devedor (R$):</label><br>
+  <input type="number" id="sal" step="0.01"><br>
+  <label>Percentual (%):</label><br>
+  <input type="number" id="pct" step="0.01"><br>
+  <label>Meses em atraso:</label><br>
+  <input type="number" id="mes"><br><br>
+  <button onclick="calc()">Calcular</button>
+  <p id="res"></p>
+  <script>
+    function calc(){
+      const v = +document.getElementById('sal').value;
+      const p = +document.getElementById('pct').value;
+      const m = +document.getElementById('mes').value;
+      const total = v * (p/100) * m;
+      document.getElementById('res').innerText = 'Total: R$ ' + total.toFixed(2);
+    }
+  </script>
+  <hr>
+  <a href="bolao.html">Aproveite também o Bolão Inteligente →</a>
+</body>
+</html>
